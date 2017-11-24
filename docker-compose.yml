@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  rs0:
+    image: mongo:latest
+    ports:
+      - 37017:27017
+    command: mongod --replSet tiny
+    depends_on:
+        - rs1
+        - rs2
+
+  rs1:
+    image: mongo:latest
+    ports:
+      - 37018:27017
+    command: mongod --replSet tiny
+
+  rs2:
+    image: mongo:latest
+    ports:
+      - 37019:27017
+    command: mongod --replSet tiny
