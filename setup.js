@@ -1,3 +1,5 @@
+/* global rs, sleep */
+
 rs.initiate()
 
 function tryAdd (host) {
@@ -18,7 +20,7 @@ function tryAdd (host) {
     if (res.ok) {
       break
     }
-    sleep(1)
+    sleep(1000)
   }
 }
 
