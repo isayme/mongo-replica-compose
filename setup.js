@@ -1,4 +1,3 @@
-rs.status()
 rs.initiate()
 
 function tryAdd (host) {
