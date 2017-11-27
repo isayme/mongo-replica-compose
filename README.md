@@ -6,8 +6,10 @@ set up mongodb replica locally with docker compose
 > make start
 
 #### connect to the mongodb replica
-> docker run --rm -it --network mongodbreplica_default alpine:latest
-> ping rs0
+```
+docker run --rm -it --network mongodbreplica_default alpine:latest
+ping rs0
+```
 
 ### stop
 > make stop
