@@ -20,7 +20,7 @@ function tryAdd (host) {
     if (res.ok) {
       break
     }
-    sleep(1000)
+    sleep(500)
   }
 }
 
