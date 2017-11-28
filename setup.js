@@ -1,4 +1,4 @@
-/* global rs, sleep */
+/* global rs, sleep, quit */
 
 rs.initiate()
 
@@ -14,14 +14,17 @@ function tryAdd (host) {
   }
 
   var res
-  // try add
-  while (1) {
+  // try 5 times
+  for (var i = 0; i < 5; i++) {
     res = rs.add(host)
     if (res.ok) {
-      break
+      return
     }
     sleep(500)
   }
+
+  // failed
+  quit(1)
 }
 
 tryAdd('rs1:27017')
