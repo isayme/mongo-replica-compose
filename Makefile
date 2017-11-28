@@ -3,7 +3,7 @@
 NETWORK_NAME = mongodb-replica
 
 start:
-	docker-compose down && \
+	make stop && \
 	docker-compose -p $(NETWORK_NAME) up -d && \
 	bash initiate.sh
 
