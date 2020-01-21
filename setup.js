@@ -27,5 +27,5 @@ function tryAdd (host) {
   quit(1)
 }
 
-tryAdd('rs1:27017')
-tryAdd('rs2:27017')
+tryAdd('mongo1:37018')
+tryAdd('mongo2:37019')

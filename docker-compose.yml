@@ -1,23 +1,26 @@
 version: "3"
 
 services:
-  rs0:
+  mongo0:
     image: mongo:latest
+    hostname: mongo0
     ports:
-      - 37017:27017
-    command: mongod --replSet tiny
+      - 37017:37017
+    command: mongod --replSet tiny --port 37017
     depends_on:
-        - rs1
-        - rs2
+        - mongo1
+        - mongo2
 
-  rs1:
+  mongo1:
     image: mongo:latest
+    hostname: mongo1
     ports:
-      - 37018:27017
-    command: mongod --replSet tiny
+      - 37018:37018
+    command: mongod --replSet tiny --port 37018
 
-  rs2:
+  mongo2:
     image: mongo:latest
+    hostname: mongo2
     ports:
-      - 37019:27017
-    command: mongod --replSet tiny
+      - 37019:37019
+    command: mongod --replSet tiny --port 37019
